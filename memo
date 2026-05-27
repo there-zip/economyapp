@@ -1,0 +1,50 @@
+
+git add . && git commit -m "update" && git push
+
+
+
+/h2-console
+
+├── .gitattributes        # 깃허브에 파일 올릴 때 줄바꿈 방식을 
+│                         # OS별로 통일시켜주는 설정 파일
+│                         # (윈도우/맥/리눅스 줄바꿈 방식이 달라서 생기는 충돌 방지)
+│
+├── .gitignore            # 깃허브에 올리지 말아야 할 파일 목록
+│                         # (API 키, 비밀번호, 빌드 결과물 등 민감하거나 
+│                         # 불필요한 파일들을 업로드에서 제외)
+│
+├── README.md             # 프로젝트 소개 문서
+│                         # 깃허브 저장소 메인 화면에 보이는 설명서
+│                         # (프로젝트가 뭔지, 어떻게 실행하는지 적는 곳)
+│
+├── build.gradle          # 프로젝트 빌드 설정 파일 (핵심!)
+│                         # 어떤 외부 라이브러리(Spring Boot, JPA, H2 등)를
+│                         # 가져다 쓸지 목록을 적어두는 곳
+│                         # (요리로 비유하면 재료 목록)
+│
+├── gradlew               # 맥/리눅스용 그래들 실행 파일
+│                         # ./gradlew bootRun 칠 때 이 파일이 실행됨
+│
+├── gradlew.bat           # 윈도우용 그래들 실행 파일
+│                         # 우리는 리눅스(코드스페이스)라 안 쓰임
+│
+├── settings.gradle       # 프로젝트 이름과 자바 버전 자동 설치 설정
+│                         # (어제 버전 충돌 잡느라 고생했던 그 파일)
+│
+├── data/                 # 파일 DB 저장 폴더 (오늘 새로 생긴 폴더)
+│   └── economydb.mv.db   # 실제 DB 데이터가 저장되는 파일
+│
+├── gradle/wrapper/       # 그래들 버전 관리 폴더
+│   └── gradle-wrapper.properties  # 어떤 버전의 그래들을 쓸지 지정
+│
+└── src/                  # 실제 소스코드가 들어있는 폴더
+    ├── main/
+    │   ├── java/com/example/demo/
+    │   │   ├── DemoApplication.java    # 앱의 시작점 (main 메서드 있는 파일)
+    │   │   ├── domain/                 # DB 테이블 설계도 모음 폴더
+    │   │   ├── repository/             # DB 조회/저장 담당 폴더
+    │   │   └── controller/             # API 요청 처리 담당 폴더
+    │   └── resources/
+    │       └── application.properties  # 스프링 부트 행동 지침 파일
+    │                                   # (DB 주소, H2 콘솔 설정 등)
+    └── test/                           # 테스트 코드 폴더 (아직 안 씀)
