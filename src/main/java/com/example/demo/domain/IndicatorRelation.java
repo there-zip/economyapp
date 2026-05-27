@@ -22,7 +22,8 @@ public class IndicatorRelation {
 
     @Column
     private Double correlation; // 상관계수 (-1.0 ~ +1.0)
-
+    // 요기 correlation은 우리가 나중에 알고리즘으로 어떻게 변환된는지 정할거임
     @Column(name = "risk_score_weight")
     private Integer riskScoreWeight; // 최종 위험 가중치 점수
+    // 상관관계를 우리가 읽기 쉽게 점수로 변환해주는 역할
 }

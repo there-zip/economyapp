@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface IndicatorRelationRepository extends JpaRepository<IndicatorRelation, Long> {
     List<IndicatorRelation> findByIndicatorId(Long indicatorId);
+    // indicatorId랑 연관된 데이터 찾아주는 기능 
 }
 

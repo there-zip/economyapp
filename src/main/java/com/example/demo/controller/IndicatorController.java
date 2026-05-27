@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+//이 클래스가 API 요청 처리하는 Controller라고 선언
 public class IndicatorController {
 
     private final IndicatorRepository indicatorRepository;
@@ -39,7 +40,7 @@ public class IndicatorController {
         return indicatorRepository.save(indicator);
     }
 
-     @PutMapping("/indicators/{id}")
+     @PutMapping("/indicators/{id}")  //수정 기능
     public Indicator updateIndicator(@PathVariable Long id, @RequestBody Indicator request) {
         Indicator indicator = indicatorRepository.findById(id).orElse(null);
         if (indicator == null) return null;
@@ -47,7 +48,7 @@ public class IndicatorController {
         return indicatorRepository.save(indicator);
     }
 
-     @DeleteMapping("/indicators/{id}")
+     @DeleteMapping("/indicators/{id}")  //삭제 기능
     public String deleteIndicator(@PathVariable Long id) {
         indicatorRepository.deleteById(id);
         return "삭제 완료: " + id;
