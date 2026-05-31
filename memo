@@ -6,6 +6,9 @@ git add . && git commit -m "update" && git push
 
 /h2-console
 
+서버키기 
+./gradlew bootRun
+
 ├── .gitattributes        # 깃허브에 파일 올릴 때 줄바꿈 방식을 
 │                         # OS별로 통일시켜주는 설정 파일
 │                         # (윈도우/맥/리눅스 줄바꿈 방식이 달라서 생기는 충돌 방지)
